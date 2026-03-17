@@ -1,0 +1,91 @@
+/* UI/UX Pro Custom CSS for MkDocs Material */
+
+/* Modern Typography and Spacing */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; background: linear-gradient(120deg, var(--md-primary-color), var(--md-accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+h2 { font-size: 1.8em; border-bottom: 2px solid var(--md-primary-fg-color--transparent); padding-bottom: 0.3em; }
+
+/* Glassmorphism Header */
+.md-header {
+  background-color: var(--md-default-bg-color--transparent) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-md-color-scheme="slate"] .md-header {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Premium Admonitions (Cards with shadows and rounded corners) */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--md-primary-fg-color--transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+.md-typeset .admonition:hover,
+.md-typeset details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+  background-color: var(--md-default-bg-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Beautiful Code Blocks */
+.md-typeset pre > code {
+  border-radius: 8px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9em;
+}
+.md-typeset .highlight, .md-typeset pre {
+   border-radius: 8px;
+   box-shadow: inset 0 0 0 1px var(--md-primary-fg-color--transparent);
+}
+
+/* Custom Scrollbar for a sleek look */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--md-primary-fg-color--transparent); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--md-primary-color); }
+
+/* Buttons & Links */
+.md-typeset a {
+  transition: color 0.2s ease;
+  position: relative;
+  text-decoration: none;
+}
+.md-typeset a:not(.md-content__button):not(.md-button):hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.md-button {
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  font-weight: 600;
+}
+.md-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--md-primary-color--transparent);
+}
+
+/* Nav Hover Effects */
+.md-nav__link { transition: color 0.2s ease, background-color 0.2s ease; border-radius: 6px; padding: 0.2rem 0.6rem; }
+.md-nav__link:hover, .md-nav__link--active { background-color: var(--md-primary-fg-color--transparent); }
